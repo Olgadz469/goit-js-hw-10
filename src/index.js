@@ -33,12 +33,13 @@ breedSelect.addEventListener('change', onSelectBreed);
 
 function onSelectBreed(event) {
     loader.classList.remove('is-hidden');
-    breedSelect.classList.add('is-hidden');
+    catInfo.classList.add('is-hidden');
+
 const breedId = event.currentTarget.value;
 fetchCatByBreed(breedId)
 .then(data => {
     loader.classList.add('is-hidden');
-    breedSelect.classList.remove('is-hidden');
+    catInfo.classList.remove('is-hidden');
 
     catInfo.innerHTML = createMarkup(data)
 
